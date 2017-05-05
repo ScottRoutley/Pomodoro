@@ -16,16 +16,7 @@ display.begin()
 colon = True
 
 twentyFiveMinutes = 1500
-
-GPIO.setmode(GPIO.BCM)  
-GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
-
-def buttonPress(channel):  
-    print "Button pressed!"
-
-GPIO.add_event_detect(24, GPIO.RISING, callback=buttonPress, bouncetime=300)
-
-raw_input("Listening...")
+ 
         # clean up GPIO on normal exit  
 
 
