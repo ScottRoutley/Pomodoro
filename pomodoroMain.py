@@ -26,7 +26,10 @@ def checkForButton():
         display.set_colon(colon) 
 
 def sleepAndLookForClick():
-    for 
+    for i in range(0,10):
+        checkForButton();
+        time.sleep(.1)
+        print(sleep + i)
  
 
 # Run through different number printing examples.
