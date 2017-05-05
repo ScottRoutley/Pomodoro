@@ -27,7 +27,7 @@ while True:
         m, s = divmod(twentyFiveMinutes, 60)
 
         print(s)
-        print( float(s / 100))
+        print( float(s / 100.00))
 
         currentTime = float(m) + (s / 100)
         # Clear the display buffer.
