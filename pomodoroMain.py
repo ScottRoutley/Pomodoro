@@ -26,7 +26,9 @@ while True:
     for i in numbers:
         m, s = divmod(twentyFiveMinutes, 60)
 
-        currentTime = m + (s/100)
+        print(s/100)
+
+        currentTime = float(m) + (s/100)
         # Clear the display buffer.
         display.clear()
         # Print a floating point number to the display.
