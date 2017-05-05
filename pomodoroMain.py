@@ -26,6 +26,7 @@ while True:
     for i in numbers:
         m, s = divmod(twentyFiveMinutes, 60)
 
+        print(s)
         print(s/100)
 
         currentTime = float(m) + (s/100)
