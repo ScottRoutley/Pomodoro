@@ -25,7 +25,8 @@ def checkForButton():
         colon = not colon
         display.set_colon(colon) 
 
-
+def sleepAndLookForClick():
+    for 
  
 
 # Run through different number printing examples.
