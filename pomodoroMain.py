@@ -16,7 +16,7 @@ display.begin()
 colon = True
 
 twentyFiveMinutes = 3000
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GP.BCM)
 GPIO.setup(17,GPIO.IN)
  
 
@@ -34,7 +34,7 @@ numbers = [0.0, 1.0, -1.0, 0.55, -0.55, 10.23, -10.2, 100.5, -100.5]
 while True:
     # Print floating point values with default 2 digit precision.
     for i in numbers:
-        m, s = divmod(twentyFiveMinutes, 60)
+        m, s = divmod(twentyFiveMinutes, 120)
 
         currentTime = float(m) + (s / 100.00)
         # Clear the display buffer.
