@@ -15,9 +15,14 @@ display.begin()
 # Keep track of the colon being turned on or off.
 colon = True
 
-twentyFiveMinutes = 1500
+twentyFiveMinutes = 3000
+GPIO.setup(17,GPIO.IN)
  
-        # clean up GPIO on normal exit  
+
+def checkForButton():
+    if (GPIO.input(17)):
+        colon = not colon
+        display.set_colon(colon) 
 
 
  
@@ -30,9 +35,6 @@ while True:
     for i in numbers:
         m, s = divmod(twentyFiveMinutes, 60)
 
-        print(s)
-        print( float(s / 100.00))
-
         currentTime = float(m) + (s / 100.00)
         # Clear the display buffer.
         display.clear()
@@ -44,7 +46,7 @@ while True:
         # update the actual display LEDs.
         display.write_display()
         # Delay for a second.
-        time.sleep(1.0)
+        time.sleep(.5)
         twentyFiveMinutes -=1
     # Print the same numbers with 1 digit precision.
 
