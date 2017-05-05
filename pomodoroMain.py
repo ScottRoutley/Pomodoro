@@ -16,7 +16,7 @@ display.begin()
 colon = True
 
 twentyFiveMinutes = 3000
-GPIO.setmode(GP.BCM)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN)
  
 
