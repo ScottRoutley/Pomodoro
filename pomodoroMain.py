@@ -29,7 +29,7 @@ while True:
         print(s)
         print(s/100)
 
-        currentTime = float(m) + (s/100)
+        currentTime = float(m) + (s / 100)
         # Clear the display buffer.
         display.clear()
         # Print a floating point number to the display.
