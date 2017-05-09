@@ -22,12 +22,10 @@ twentyFiveMinutes = 1500
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN)
  
-print (display.get_colon())
 
 def checkForButton():
     if (GPIO.input(17)):
-        colon = not colon
-        display.set_colon(colon)
+        print('button is pushed')
 
 def sleepAndLookForClick():
     for i in range(0,10):
