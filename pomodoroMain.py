@@ -20,16 +20,17 @@ colon = True
 
 twentyFiveMinutes = 1500
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_U)
  
 
 def checkForButton():
-    if (GPIO.input(17)):
-        print('button is pushed')
+    if (GPIO.input(17) == False):
+        return True
 
 def sleepAndLookForClick():
     for i in range(0,10):
-        checkForButton()
+        if (checkForButton()):
+            print ('button pushed')
         time.sleep(.1)
         print('sleep' + str(i))
  
