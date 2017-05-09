@@ -13,7 +13,8 @@ display = SevenSegment.SevenSegment()
 display.begin()
 
 # Keep track of the colon being turned on or off.
-colon = True
+colon = False
+
 
 twentyFiveMinutes = 1500
 GPIO.setmode(GPIO.BCM)
