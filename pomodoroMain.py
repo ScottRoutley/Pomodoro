@@ -27,7 +27,7 @@ def checkForButton():
 
 def sleepAndLookForClick():
     for i in range(0,10):
-        checkForButton();
+        checkForButton()
         time.sleep(.1)
         print(sleep + i)
  
