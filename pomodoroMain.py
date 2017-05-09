@@ -20,7 +20,7 @@ colon = True
 
 twentyFiveMinutes = 1500
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_U)
+GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
  
 
 def checkForButton():
