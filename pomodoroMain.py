@@ -34,9 +34,12 @@ def sleepAndLookForClick():
         if (checkForButton()):
             count += 1
             print ('button pushed ' + str(count))
+        else:
+            count = 0
         time.sleep(.1)
         print('sleep' + str(i))
  
+    return count
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
@@ -58,7 +61,9 @@ while True:
         display.write_display()
         # Delay for a second.
         # time.sleep(1)
-        sleepAndLookForClick()
+        buttonPressed = sleepAndLookForClick()
+        print(buttonPressed)
+        
         twentyFiveMinutes -=1
     # Print the same numbers with 1 digit precision.
 
