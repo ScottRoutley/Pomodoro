@@ -28,9 +28,12 @@ def checkForButton():
         return True
 
 def sleepAndLookForClick():
-    for i in range(0,10):
+    count = 0
+
+    for i in range(0,10):1
         if (checkForButton()):
-            print ('button pushed')
+            count += 1
+            print ('button pushed ' + str(count))
         time.sleep(.1)
         print('sleep' + str(i))
  
