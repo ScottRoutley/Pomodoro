@@ -22,7 +22,7 @@ GPIO.setup(17,GPIO.IN)
 
 def checkForButton():
     if (GPIO.input(17)):
-        # colon = not colon
+        colon = not colon
         display.set_colon(colon)
 
 def sleepAndLookForClick():
