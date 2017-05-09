@@ -15,7 +15,7 @@ display.begin()
 # Keep track of the colon being turned on or off.
 colon = True
 
-twentyFiveMinutes = 3000
+twentyFiveMinutes = 1500
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN)
  
@@ -38,7 +38,7 @@ numbers = [0.0, 1.0, -1.0, 0.55, -0.55, 10.23, -10.2, 100.5, -100.5]
 while True:
     # Print floating point values with default 2 digit precision.
     for i in numbers:
-        m, s = divmod(twentyFiveMinutes, 120)
+        m, s = divmod(twentyFiveMinutes, 60)
 
         currentTime = float(m) + (s / 100.00)
         # Clear the display buffer.
@@ -51,7 +51,8 @@ while True:
         # update the actual display LEDs.
         display.write_display()
         # Delay for a second.
-        time.sleep(.5)
+        # time.sleep(1)
+        sleepAndLookForClick()
         twentyFiveMinutes -=1
     # Print the same numbers with 1 digit precision.
 
