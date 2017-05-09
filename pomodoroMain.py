@@ -29,7 +29,7 @@ def sleepAndLookForClick():
     for i in range(0,10):
         checkForButton()
         time.sleep(.1)
-        print('sleep' + i)
+        print('sleep' + str(i))
  
 
 # Run through different number printing examples.
