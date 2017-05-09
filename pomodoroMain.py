@@ -22,14 +22,14 @@ GPIO.setup(17,GPIO.IN)
 
 def checkForButton():
     if (GPIO.input(17)):
-        colon = not colon
-        display.set_colon(colon) 
+        # colon = not colon
+        display.set_colon(colon)
 
 def sleepAndLookForClick():
     for i in range(0,10):
         checkForButton()
         time.sleep(.1)
-        print(sleep + i)
+        print('sleep' + i)
  
 
 # Run through different number printing examples.
