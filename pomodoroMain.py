@@ -13,7 +13,9 @@ display = SevenSegment.SevenSegment()
 display.begin()
 
 # Keep track of the colon being turned on or off.
-global colon = False
+global colon
+
+colon = True
 
 
 twentyFiveMinutes = 1500
