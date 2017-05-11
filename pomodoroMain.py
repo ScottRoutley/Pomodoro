@@ -17,11 +17,16 @@ global colon
 
 colon = True
 
-
-twentyFiveMinutes = 1500
+timerRunning = False
+twentyFiveMinutes = 0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
- 
+
+
+def setup():
+    twentyFiveMinutes = 1500
+
+
 
 def checkForButton():
     if (GPIO.input(17) == False):
@@ -42,6 +47,9 @@ def sleepAndLookForClick():
 print('Press Ctrl-C to quit.')
 numbers = [0.0, 1.0, -1.0, 0.55, -0.55, 10.23, -10.2, 100.5, -100.5]
 while True:
+
+    setup()
+
     # Print floating point values with default 2 digit precision.
     for i in numbers:
         m, s = divmod(twentyFiveMinutes, 60)
@@ -58,8 +66,13 @@ while True:
         display.write_display()
         # Delay for a second.
         # time.sleep(1)
-        sleepAndLookForClick()
-        twentyFiveMinutes -=1
+        resultOfClick = sleepAndLookForClick()
+
+        if (resultOfClick > 0):
+            timerRunning = not timerRunning
+
+        if timerRunning:
+            twentyFiveMinutes -=1
     # Print the same numbers with 1 digit precision.
 
 GPIO.cleanup()   
