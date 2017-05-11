@@ -39,9 +39,12 @@ def sleepAndLookForClick():
         if (checkForButton()):
             count += 1
             print ('button pushed ' + str(count))
+        else:
+            count = 0
         time.sleep(.1)
         print('sleep' + str(i))
  
+    return count
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
@@ -73,6 +76,7 @@ while True:
 
         if timerRunning:
             twentyFiveMinutes -=1
+
     # Print the same numbers with 1 digit precision.
 
 GPIO.cleanup()   
