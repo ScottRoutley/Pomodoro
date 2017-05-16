@@ -49,34 +49,31 @@ def sleepAndLookForClick():
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
-numbers = [0.0, 1.0, -1.0, 0.55, -0.55, 10.23, -10.2, 100.5, -100.5]
+
+setup()
+
 while True:
+    m, s = divmod(twentyFiveMinutes, 60)
 
-    setup()
+    currentTime = float(m) + (s / 100.00)
+    # Clear the display buffer.
+    display.clear()
+    # Print a floating point number to the display.
+    display.print_float(currentTime)
+    # Set the colon on or off (True/False).
+    display.set_colon(colon)
+    # Write the display buffer to the hardware.  This must be called to
+    # update the actual display LEDs.
+    display.write_display()
+    # Delay for a second.
+    # time.sleep(1)
+    resultOfClick = sleepAndLookForClick()
 
-    # Print floating point values with default 2 digit precision.
-    for i in numbers:
-        m, s = divmod(twentyFiveMinutes, 60)
+    if (resultOfClick > 0):
+        timerRunning = not timerRunning
 
-        currentTime = float(m) + (s / 100.00)
-        # Clear the display buffer.
-        display.clear()
-        # Print a floating point number to the display.
-        display.print_float(currentTime)
-        # Set the colon on or off (True/False).
-        display.set_colon(colon)
-        # Write the display buffer to the hardware.  This must be called to
-        # update the actual display LEDs.
-        display.write_display()
-        # Delay for a second.
-        # time.sleep(1)
-        resultOfClick = sleepAndLookForClick()
-
-        if (resultOfClick > 0):
-            timerRunning = not timerRunning
-
-        if timerRunning:
-            twentyFiveMinutes -=1
+    if timerRunning:
+        twentyFiveMinutes -=1
 
     # Print the same numbers with 1 digit precision.
 
