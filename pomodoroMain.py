@@ -11,7 +11,6 @@ class MyTimer():
     def __init__(self):
         self.currentTime = 1500
 
-    @property
     def currentTime():
         return self.currentTime
 
