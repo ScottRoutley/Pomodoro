@@ -3,21 +3,6 @@ import time
 from Adafruit_LED_Backpack import SevenSegment
 import RPi.GPIO as GPIO  
 
-
-class MyTimer():
-    currentTime = 0
-    timerRunning = False
-
-    def __init__(self):
-        self.currentTime = 1500
-
-    def currentTime(self):
-        return self.currentTime
-
-    def subtractSecond():
-        self.currentTime -= 1
-
-
 # Create display instance on default I2C address (0x70) and bus number.
 display = SevenSegment.SevenSegment()
 
@@ -28,8 +13,20 @@ display = SevenSegment.SevenSegment()
 display.begin()
 
 # Keep track of the colon being turned on or off.
+global colon
+
+colon = True
+
+timerRunning = False
+twentyFiveMinutes = 0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+
+
+def setup():
+    print("in setup")
+    global twentyFiveMinutes
+    twentyFiveMinutes = 1500
 
 
 def checkForButton():
@@ -55,11 +52,11 @@ print('Press Ctrl-C to quit.')
 numbers = [0.0, 1.0, -1.0, 0.55, -0.55, 10.23, -10.2, 100.5, -100.5]
 while True:
 
-    timer = MyTimer
+    setup()
 
     # Print floating point values with default 2 digit precision.
     for i in numbers:
-        m, s = divmod(currentTime(timer), 60)
+        m, s = divmod(twentyFiveMinutes, 60)
 
         currentTime = float(m) + (s / 100.00)
         # Clear the display buffer.
@@ -79,7 +76,7 @@ while True:
             timerRunning = not timerRunning
 
         if timerRunning:
-            timer.subtractSecond()
+            twentyFiveMinutes -=1
 
     # Print the same numbers with 1 digit precision.
 
