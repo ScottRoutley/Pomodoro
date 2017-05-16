@@ -76,7 +76,7 @@ while True:
     if (resultOfClick > 0):
         threeSecondCheck += resultOfClick
 
-        print ("addtion of " + threeSecondCheck)
+        print ("addtion of " + str(threeSecondCheck))
 
         if (threeSecondCheck > 30):
             print("reset the timer")
