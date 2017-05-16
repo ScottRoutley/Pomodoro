@@ -11,7 +11,7 @@ class MyTimer():
     def __init__(self):
         self.currentTime = 1500
 
-    def currentTime():
+    def currentTime(self):
         return self.currentTime
 
     def subtractSecond():
@@ -59,7 +59,7 @@ while True:
 
     # Print floating point values with default 2 digit precision.
     for i in numbers:
-        m, s = divmod(timer.currentTime(), 60)
+        m, s = divmod(timer.currentTime(MyTimer), 60)
 
         currentTime = float(m) + (s / 100.00)
         # Clear the display buffer.
