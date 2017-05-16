@@ -51,6 +51,8 @@ print('Press Ctrl-C to quit.')
 
 setup()
 
+buttonWasPressed = False
+
 while True:
     m, s = divmod(twentyFiveMinutes, 60)
 
@@ -69,9 +71,12 @@ while True:
     resultOfClick = sleepAndLookForClick()
 
     if (resultOfClick > 0):
-        timerRunning = not timerRunning
+        if (buttonWasPressed = False):
+            timerRunning = not timerRunning
+        buttonWasPressed = True
     else:
         threeSecondCheck = 0
+        buttonWasPressed = False
 
     if (resultOfClick > 0):
         threeSecondCheck += resultOfClick
