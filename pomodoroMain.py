@@ -71,7 +71,7 @@ while True:
     resultOfClick = sleepAndLookForClick()
 
     if (resultOfClick > 0):
-        if (buttonWasPressed = False):
+        if (buttonWasPressed == False):
             timerRunning = not timerRunning
         buttonWasPressed = True
     else:
