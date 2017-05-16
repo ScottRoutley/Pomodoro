@@ -13,11 +13,10 @@ display = SevenSegment.SevenSegment()
 display.begin()
 
 # Keep track of the colon being turned on or off.
-global colon
-
 colon = True
 
 timerRunning = False
+threeSecondCheck = 0
 twentyFiveMinutes = 0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
@@ -71,6 +70,19 @@ while True:
 
     if (resultOfClick > 0):
         timerRunning = not timerRunning
+    else:
+        threeSecondCheck = 0
+
+    if (resultOfClick > 0):
+        threeSecondCheck += resultOfClick
+
+        print ("addtion of " + threeSecondCheck)
+
+        if (threeSecondCheck > 30):
+            print("reset the timer")
+            timerRunning = False
+            setup()
+    
 
     if timerRunning:
         twentyFiveMinutes -=1
