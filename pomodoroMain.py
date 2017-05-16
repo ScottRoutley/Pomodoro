@@ -39,7 +39,7 @@ def sleepAndLookForClick():
     for i in range(0,10):
         if (checkForButton()):
             clickCount += 1
-            print ('button pushed ' + str(count))
+            print ('button pushed ' + str(clickCount))
         # else:
         #     count = 0
         time.sleep(.1)
