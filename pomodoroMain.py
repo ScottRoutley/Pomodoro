@@ -11,7 +11,7 @@ class MyTimer():
     def __init__(self):
         self.currentTime = 1500
 
- 
+    @property
     def currentTime():
         return self.currentTime
 
@@ -60,7 +60,7 @@ while True:
 
     # Print floating point values with default 2 digit precision.
     for i in numbers:
-        m, s = divmod(timer.currentTime, 60)
+        m, s = divmod(timer.get_currentTime(), 60)
 
         currentTime = float(m) + (s / 100.00)
         # Clear the display buffer.
