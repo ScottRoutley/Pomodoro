@@ -34,18 +34,18 @@ def checkForButton():
         return True
 
 def sleepAndLookForClick():
-    count = 0
+    clickCount = 0
 
     for i in range(0,10):
         if (checkForButton()):
-            count += 1
+            clickCount += 1
             print ('button pushed ' + str(count))
-        else:
-            count = 0
+        # else:
+        #     count = 0
         time.sleep(.1)
         print('sleep' + str(i))
  
-    return count
+    return clickCount
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
