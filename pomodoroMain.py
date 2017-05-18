@@ -21,6 +21,8 @@ twentyFiveMinutes = 0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
+GPIO.setup(16,GPIO.OUT,pull_up_down=GPIO.PUD_UP)
+
 
 def setup():
     print("in setup")
@@ -91,6 +93,9 @@ while True:
 
     if timerRunning:
         twentyFiveMinutes -=1
+        GPIO.output(16,GPIO.HIGH)
+    else:
+        GPIO.output(16,GPIO.LOW)
 
     # Print the same numbers with 1 digit precision.
 
