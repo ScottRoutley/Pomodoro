@@ -59,7 +59,7 @@ def finishedPomodoro():
 
     pomodoroMode = False
 
-    for 0 to range(0,5):
+    for i in range(0,5):
         GPIO.output(26, HIGH)
         GPIO.output(16, HIGH)
         display.clear()
