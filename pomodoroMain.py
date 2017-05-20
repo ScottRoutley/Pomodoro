@@ -56,6 +56,8 @@ def sleepAndLookForClick():
 
 def finishedPomodoro():
 
+    global pomodoroMode
+
     pomodoroMode = False
 
     for i in range(0,5):
@@ -73,7 +75,7 @@ def finishedPomodoro():
 
     global twentyFiveMinutes
 
-    twentyFiveMinutes = 180
+    twentyFiveMinutes = 5
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
