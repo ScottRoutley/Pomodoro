@@ -69,6 +69,7 @@ def finishedPomodoro():
         GPIO.output(16, GPIO.LOW)
         display.print_float(8888)
         display.write_display()
+        time.sleep(.4)
 
     global twentyFiveMinutes
 
