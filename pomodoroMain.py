@@ -132,6 +132,7 @@ while True:
         finishedPomodoro()
     elif (twentyFiveMinutes == 0) and (pomodoroMode == False) and (timerRunning):
         setup()
+        pomodoroMode = True
         timerRunning = False
 
 
