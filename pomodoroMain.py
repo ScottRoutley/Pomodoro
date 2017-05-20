@@ -22,11 +22,11 @@ twentyFiveMinutes = 0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
-# # Yellow lights
-# GPIO.setup(16,GPIO.OUT)
+# Yellow lights
+GPIO.setup(16,GPIO.OUT)
 
-# # Buzzer buzzer
-# GPIO.setup(26,GPIO.OUT)
+# Buzzer buzzer
+GPIO.setup(26,GPIO.OUT)
 
 
 def setup():
