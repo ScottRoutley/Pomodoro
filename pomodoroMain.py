@@ -15,6 +15,7 @@ display.begin()
 # Keep track of the colon being turned on or off.
 colon = True
 
+pomodoroMode = True
 timerRunning = False
 threeSecondCheck = 0
 twentyFiveMinutes = 0
@@ -31,7 +32,8 @@ GPIO.setup(26,GPIO.OUT)
 def setup():
     print("in setup")
     global twentyFiveMinutes
-    twentyFiveMinutes = 1500
+    # twentyFiveMinutes = 1500
+    twentyFiveMinutes = 20
 
 
 def checkForButton():
@@ -51,6 +53,27 @@ def sleepAndLookForClick():
         print('sleep' + str(i))
  
     return clickCount
+
+
+def finishedPomodoro():
+
+    pomodoroMode = False
+
+    for 0 to range(0,5):
+        GPIO.output(26, HIGH)
+        GPIO.output(16, HIGH)
+        display.clear()
+        display.write_display()
+
+        time.sleep(.4)
+        GPIO.output(26, LOW)
+        GPIO.output(16, LOW)
+        display.print_float(8888)
+        display.write_display()
+
+    global twentyFiveMinutes
+
+    twentyFiveMinutes = 180
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
@@ -105,6 +128,14 @@ while True:
         GPIO.output(16,GPIO.HIGH)
     else:
         GPIO.output(16,GPIO.LOW)
+
+
+    if twentyFiveMinutes = 0 and timerRunning and pomodoroMode:
+        finishedPomodoro()
+    elif twentyFiveMinutes = 0 and pomodoroMode = False and timerRunning:
+        setup()
+        timerRunning = False
+
 
     # Print the same numbers with 1 digit precision.
 
