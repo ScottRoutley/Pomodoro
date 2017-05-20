@@ -21,7 +21,11 @@ twentyFiveMinutes = 0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
+# Yellow lights
 GPIO.setup(16,GPIO.OUT)
+
+# Buzzer lights
+GPIO.setup(26,GPIO.OUT)
 
 
 def setup():
@@ -54,6 +58,11 @@ print('Press Ctrl-C to quit.')
 setup()
 
 buttonWasPressed = False
+
+
+GPIO.output(26,GPIO.HIGH)
+time.sleep(.4)
+GPIO.output(26,GPIO.LOW)
 
 while True:
     m, s = divmod(twentyFiveMinutes, 60)
