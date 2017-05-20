@@ -132,7 +132,7 @@ while True:
 
     if (twentyFiveMinutes == 0) and (timerRunning) and (pomodoroMode):
         finishedPomodoro()
-    elif (twentyFiveMinutes == 0) and (pomodoroMode = False) and (timerRunning):
+    elif (twentyFiveMinutes == 0) and (pomodoroMode == False) and (timerRunning):
         setup()
         timerRunning = False
 
