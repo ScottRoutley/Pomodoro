@@ -34,6 +34,8 @@ def setup():
     global twentyFiveMinutes
     # twentyFiveMinutes = 1500
     twentyFiveMinutes = 10
+    GPIO.output(16, GPIO.HIGH)
+    
 
 def checkForButton():
     if (GPIO.input(17) == False):
@@ -124,8 +126,8 @@ while True:
         twentyFiveMinutes -=1
         if (pomodoroMode):
              GPIO.output(16,GPIO.HIGH)
-    else:
-        GPIO.output(16,GPIO.LOW)
+    # else:
+    #     GPIO.output(16,GPIO.LOW)
 
 
     if (twentyFiveMinutes == 0) and (timerRunning) and (pomodoroMode):
