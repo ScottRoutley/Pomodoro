@@ -32,8 +32,8 @@ GPIO.setup(26,GPIO.OUT)
 def setup():
     print("in setup")
     global twentyFiveMinutes
-    # twentyFiveMinutes = 1500
-    twentyFiveMinutes = 10
+    twentyFiveMinutes = 1500
+    # twentyFiveMinutes = 10
     GPIO.output(16, GPIO.HIGH)
     
 
@@ -47,11 +47,11 @@ def sleepAndLookForClick():
     for i in range(0,10):
         if (checkForButton()):
             clickCount += 1
-            print ('button pushed ' + str(clickCount))
+            # print ('button pushed ' + str(clickCount))
         # else:
         #     count = 0
         time.sleep(.1)
-        print('sleep' + str(i))
+        # print('sleep' + str(i))
  
     return clickCount
 
@@ -77,7 +77,7 @@ def finishedPomodoro():
 
     global twentyFiveMinutes
 
-    twentyFiveMinutes = 5
+    twentyFiveMinutes = 300
 
 # Run through different number printing examples.
 print('Press Ctrl-C to quit.')
@@ -114,10 +114,10 @@ while True:
     if (resultOfClick > 0):
         threeSecondCheck += resultOfClick
 
-        print ("addtion of " + str(threeSecondCheck))
+        # print ("addtion of " + str(threeSecondCheck))
 
         if (threeSecondCheck > 30):
-            print("reset the timer")
+            # print("reset the timer")
             timerRunning = False
             setup()
     
